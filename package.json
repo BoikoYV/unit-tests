@@ -1,0 +1,14 @@
+{
+    "name": "unit-tests",
+    "version": "1.0.0",
+    "description": "unit-tests",
+    "main": "script.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "author": "Yulia Boiko",
+    "license": "ISC",
+    "devDependencies": {
+        "jest": "^27.1.0"
+    }
+}
