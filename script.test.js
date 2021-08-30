@@ -6,7 +6,6 @@ describe('get country information', () => {
 
     test('get country obj with code prop', () => {
 
-        expect(getCountry('US')).toBeTruthy();
         expect(getCountry('US')).toEqual({
             code: 'US',
             name: 'United States',
@@ -18,22 +17,23 @@ describe('get country information', () => {
     });
 
     test('get country obj without code prop', () => {
-        expect(getCountryByCode('US')).toBeTruthy();
-        expect(getCountryByCode('US')).not.toHaveProperty('code');
+        expect(getCountryByCode('US')).toEqual({
+            name: 'United States',
+            capital: 'Washington',
+            area: 9629091,
+            continent: 'NA'
+        });
     })
 
     test('get obj with country name and capital', () => {
-        expect(getCapitalByName('UA')).toBeTruthy();
         expect(getCapitalByName('UA')).toEqual({ capital: 'Kyiv', name: 'Ukraine' });
     })
 
     test('get country continent', () => {
-        expect(getContinentByCode('UA')).toBeTruthy();
         expect(getContinentByCode('UA')).toBe('Europe');
     })
 
     test('get info about continent: area and array of countries', () => {
-        expect(getContinentData('EU')).toBeTruthy();
         expect(getContinentData('EU')).toEqual({
             area: 4849670,
             countries: ['Germany', 'Denmark', 'Ukraine', 'United Kingdom']
